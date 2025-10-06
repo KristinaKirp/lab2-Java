@@ -16,13 +16,17 @@ public class Main {
 
             switch (choice){
                 case "1.1":
-                    System.out.println("Вывод точек каординатной плоскости в текстовой форме");
-                    kaordinatePoint point1 = new kaordinatePoint(5, 25);
-                    kaordinatePoint point2 = new kaordinatePoint(-3,4);
-                    kaordinatePoint point3 = new kaordinatePoint();
-                    System.out.println("Первая точка: " + point1);
-                    System.out.println("Вторая точка: " + point2);
-                    System.out.println("Третья точка: " + point3);
+//                    System.out.println("Вывод точек каординатной плоскости в текстовой форме");
+//                    kaordinatePoint point1 = new kaordinatePoint();
+//                    point1.x = 5;
+//                    point1.y = 6;
+//                    kaordinatePoint point2 = new kaordinatePoint();
+//                    point2.x =-8;
+//                    point2.y = -47;
+//                    kaordinatePoint point3 = new kaordinatePoint();
+//                    System.out.println("Первая точка: " + point1);
+//                    System.out.println("Вторая точка: " + point2);
+//                    System.out.println("Третья точка: " + point3);
                     break;
                 case "2.1":
                     System.out.println("Вывод прямой на плоскости.");
@@ -45,8 +49,9 @@ public class Main {
                     System.out.println("2: " + line2);
                     System.out.println("3: " + line3);
                     System.out.println("Изменяем каординаты первой пнрямой, чтобы каординаты второй не изменились");
-                    line1.getEnd().setX(17);
-                    line1.getEnd().setY(56);
+                    kaordinatePoint line1Start = new kaordinatePoint(3,5);
+                    kaordinatePoint line1End = new kaordinatePoint(6,-7);
+                    line1 = new straightLine(line1Start, line1End);
                     System.out.println("1:" + line1);
                     System.out.println("3:" + line3);
                     break;
@@ -86,14 +91,14 @@ public class Main {
                     System.out.println("Студенты Вася и Максим");
                     student student4 = new student("Максим", null);
                     System.out.println(student4);
-                    int[] grades1 = {3,4,5};
+                    int[] grades1 = {3,4,5,4};
                     student student5 = new student("Вася", grades1);
                     System.out.println(student5);
                     break;
                 case "5.6":
                     System.out.println("Вывод имение студента, его оценок, среденего балла и является ли он отличником");
                     int[] vasyagrades = {3,4,5,4};
-                    student vasya = new student("Ва6ся", vasyagrades);
+                    student vasya = new student("Вася", vasyagrades);
                     int[] petyagrades = {5,5,5,5};
                     student petya = new student("Петя", petyagrades);
                     System.out.println(vasya);

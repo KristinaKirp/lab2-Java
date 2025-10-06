@@ -1,10 +1,8 @@
 public class kaordinatePoint {
     private int x;
     private int y;
-    public kaordinatePoint(){
-        this.x = 15;
-        this.y = 16;
-    }
+//    public int x;
+//    public int y;
 
     public int getX() {
         return x;

@@ -3,7 +3,6 @@ import java.util.Arrays;
 public class student {
     private String name;
     private int[] grades;
-    private boolean excellentStudent;
     private double gpa;
 
     public double getGpa(){
@@ -42,7 +41,6 @@ public class student {
     public student(String name, int[] grades){
         setName(name);
         setGrades(grades);
-        this.gpa = 0;
         double count = 0;
         if(this.grades == null || this.grades.length == 0){
             gpa = 0;
@@ -51,11 +49,6 @@ public class student {
                 count = count + this.grades[i];
             }
             gpa = count/this.grades.length;
-        }
-        if(gpa == 5.0){
-            excellentStudent = true;
-        }else{
-            excellentStudent = false;
         }
     }
 
@@ -94,7 +87,7 @@ public class student {
 //        }
 //    }
     public  String toString(){
-        if(excellentStudent){
+        if(gpa == 5){
             return "У студента " + name + " средний балл: " + gpa + ". Он отличник";
         }else {
             return "У студента " + name + " средний балл: " + gpa + ". Он не отличник";

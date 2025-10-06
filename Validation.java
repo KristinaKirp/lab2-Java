@@ -30,29 +30,4 @@ public class Validation {
     }
 
 }
-//public class Validation {
-//    public static boolean nameError(String name){
-//        if(name == null || name.isEmpty()){
-//            return false;
-//        }
-//        if(name.length() < 2){
-//            return false;
-//        }
-//        if(name.length() > 20){
-//            return false;
-//        }
-//        return true;
-//    }
-//
-//    public static boolean errorInArray(int[] grades){
-//        if(grades == null){
-//            return false;
-//        }
-//        for (int i = 0; i < grades.length; i++){
-//            if(grades[i] < 2 || grades[i] > 5){
-//                return false;
-//            }
-//        }
-//        return true;
-//    }
-//}
+
