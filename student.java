@@ -19,22 +19,55 @@ public class student {
     }
 
     public void setName(String name) {
-        this.name = name;
-    }
+        String errorName = Validation.nameError(name);
+        if(errorName == null){
+            this.name = name;
+        }else {
+            System.out.println("Данные введены неккоректно, заменяю на базовые: Иван");
+            this.name = "Иван";
+        }
 
+    }
     public void setGrades(int[] grades) {
-        this.grades = grades;
+        int errorGrades = Validation.errorInArray(grades);
+        if(errorGrades == 0 ) {
+            this.grades = grades;
+        } else {
+            System.out.println("Ошибка в веденном массиве! Массив изменен.");
+            this.grades = new int[] {3,4,5,3};
+        }
     }
 
-    public student(){
-        this.name = "Вася";
-        this.grades = new int[] {3,4,5};
+
+    public student(String name, int[] grades){
+        setName(name);
+        setGrades(grades);
+        this.gpa = 0;
+        double count = 0;
+        if(this.grades == null || this.grades.length == 0){
+            gpa = 0;
+        }else {
+            for (int i = 0; i < this.grades.length; i ++){
+                count = count + this.grades[i];
+            }
+            gpa = count/this.grades.length;
+        }
+        if(gpa == 5.0){
+            excellentStudent = true;
+        }else{
+            excellentStudent = false;
+        }
     }
 
-    public student(student student){
-        this.grades = student.grades;
-        this.name = "Петя";
-    }
+//    public student(){
+//        this.name = "Вася";
+//        this.grades = new int[] {3,4,5};
+//    }
+//
+//    public student(student student){
+//        this.grades = student.grades;
+//        this.name = "Петя";
+//    }
 
 //    public student(String name, int[] grades){
 //        setName(name);
@@ -49,26 +82,7 @@ public class student {
 //        }
 //    }
 
-    public student(String name, int[] grades){
-        setName(name);
-        setGrades(grades);
-        this.gpa = 0;
-        int count = 0;
-        if(grades == null){
-            gpa = 0;
-        }else {
-            for (int i = 0; i < grades.length; i ++){
-                gpa = gpa + grades[i];
-                count++;
-            }
-            gpa = gpa/count;
-        }
-        if(gpa == 5.0){
-            excellentStudent = true;
-        }else{
-            excellentStudent = false;
-        }
-    }
+
 
 
     @Override
@@ -80,7 +94,7 @@ public class student {
 //        }
 //    }
     public  String toString(){
-        if(excellentStudent == true){
+        if(excellentStudent){
             return "У студента " + name + " средний балл: " + gpa + ". Он отличник";
         }else {
             return "У студента " + name + " средний балл: " + gpa + ". Он не отличник";

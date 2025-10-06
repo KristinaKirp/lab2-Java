@@ -1,7 +1,4 @@
 import java.util.Scanner;
-
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -22,7 +19,7 @@ public class Main {
                     System.out.println("Вывод точек каординатной плоскости в текстовой форме");
                     kaordinatePoint point1 = new kaordinatePoint(5, 25);
                     kaordinatePoint point2 = new kaordinatePoint(-3,4);
-                    kaordinatePoint point3 = new kaordinatePoint(7,-45);
+                    kaordinatePoint point3 = new kaordinatePoint();
                     System.out.println("Первая точка: " + point1);
                     System.out.println("Вторая точка: " + point2);
                     System.out.println("Третья точка: " + point3);
@@ -54,28 +51,28 @@ public class Main {
                     System.out.println("3:" + line3);
                     break;
                 case "3.1":
-                    System.out.println("Студенты Вася, Петя, Андоей");
-                    student student1 = new student();
-                    student student2 = new student(student1);
-                    System.out.println(student1);
-                    System.out.println(student2);
-                    System.out.println("Изменяем первую оценку Васи на 5");
-                    student1.getGrades()[0]=5;
-                    System.out.println(student1);
-                    System.out.println(student2);
-                    int[] grades = student1.getGrades();
-                    int[] gradesAndrey = new int[grades.length];
-                    for(int i = 0; i < grades.length; i++){
-                        gradesAndrey[i] = grades[i];
-                    }
-                    student student3 = new student("Андрей", gradesAndrey);
-                    System.out.println(student3);
-                    student1.getGrades()[1] = 2;
-                    System.out.println("Изменяем вторую цоенку Васи на 2");
-                    System.out.println(student1);
-                    System.out.println(student2);
-                    System.out.println(student3);
-                    break;
+//                    System.out.println("Студенты Вася, Петя, Андоей");
+//                    student student1 = new student();
+//                    student student2 = new student(student1);
+//                    System.out.println(student1);
+//                    System.out.println(student2);
+//                    System.out.println("Изменяем первую оценку Васи на 5");
+//                    student1.getGrades()[0]=5;
+//                    System.out.println(student1);
+//                    System.out.println(student2);
+//                    int[] grades = student1.getGrades();
+//                    int[] gradesAndrey = new int[grades.length];
+//                    for(int i = 0; i < grades.length; i++){
+//                        gradesAndrey[i] = grades[i];
+//                    }
+//                    student student3 = new student("Андрей", gradesAndrey);
+//                    System.out.println(student3);
+//                    student1.getGrades()[1] = 2;
+//                    System.out.println("Изменяем вторую цоенку Васи на 2");
+//                    System.out.println(student1);
+//                    System.out.println(student2);
+//                    System.out.println(student3);
+//                    break;
                 case "4.1":
                     System.out.println("Точки на плоскости");
                     kaordinatePoint point4 = new kaordinatePoint(3,5);
@@ -96,12 +93,16 @@ public class Main {
                 case "5.6":
                     System.out.println("Вывод имение студента, его оценок, среденего балла и является ли он отличником");
                     int[] vasyagrades = {3,4,5,4};
-                    student vasya = new student("Вася", vasyagrades);
+                    student vasya = new student("Ва6ся", vasyagrades);
                     int[] petyagrades = {5,5,5,5};
                     student petya = new student("Петя", petyagrades);
                     System.out.println(vasya);
                     System.out.println(petya);
                     break;
+                case "0":
+                    System.out.println("Выход");
+                    scanner.close();
+                    return;
                 default:
                     System.out.println("Неверный выбор!");
 
