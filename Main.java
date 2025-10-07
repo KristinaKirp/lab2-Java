@@ -16,7 +16,7 @@ public class Main {
 
             switch (choice){
                 case "1.1":
-                    System.out.println("Вывод точек каординатной плоскости в текстовой форме");
+                    System.out.println("Вывод точек координатной плоскости в текстовой форме");
                     KaordinatePoint point1 = new KaordinatePoint();
                     point1.setX(5);
                     point1.setY(9);
@@ -47,7 +47,7 @@ public class Main {
                     line2.getEnd().setY(36);
                     System.out.println("2: " + line2);
                     System.out.println("3: " + line3);
-                    System.out.println("Изменяем каординаты первой пнрямой, чтобы каординаты второй не изменились");
+                    System.out.println("Изменяем координаты первой пнрямой, чтобы кщординаты третьей не изменились");
                     KaordinatePoint line1Start = new KaordinatePoint(3,5);
                     KaordinatePoint line1End = new KaordinatePoint(6,-7);
                     line1 = new StraightLine(line1Start, line1End);
